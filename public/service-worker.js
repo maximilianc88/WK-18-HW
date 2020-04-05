@@ -3,13 +3,14 @@ console.log("I'm the service worker ya janky mofo");
 const FILES_TO_CACHE = [
     `/`,
     `/index.html`,
-    `index.js`,
+    `style.css`,
     `db.js`,
-    `style.css`
+    `index.js`,
+    `manifest.webmanifest`
 ];
 
-const CACHE_NAME = 'static-cache-v1';
-const DATA_CACHE_NAME = 'data-cache-v1';
+const CACHE_NAME = 'static-cache-v5';
+const DATA_CACHE_NAME = 'data-cache-v5';
 
 self.addEventListener('install', event => {
     console.log('begin install');
@@ -56,7 +57,7 @@ self.addEventListener('fetch', event => {
             .catch(err => console.error())
         );
     } else {
-        event.responseWith(
+        event.respondWith(
             caches.match(event.request).then(response => response || fetch (event.request))
         );
     }

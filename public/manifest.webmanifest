@@ -1,8 +1,15 @@
 {
     "short_name": "Budget Tracker",
     "name": "Budget Tracker",
+    "icons": [
+      {
+        "src": "/assets/dolla_sign_192.png",
+        "sizes": "184x184",
+        "type": "image/png"
+      }
+    ],
     "start_url": "/",
-    "background_color": "808080",
+    "background_color": "#808080",
     "display": "standalone",
-    "theme_color": "808080"
-}
+    "theme_color": "#808080"
+  }
